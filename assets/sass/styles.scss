@@ -1,0 +1,42 @@
+/* These colors are just here for reference. Delete them later */
+$primary: #0d6efd;
+$secondary: #adb5bd;
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #fff;
+$dark: #000;
+
+/* Site Theme Colors */
+$color-accent: hsl(77, 29%, 45%);
+$color-text: hsl(0, 0%, 20%);
+$color-subtext: hsl(0, 0%, 30%);
+$color-bg: hsl(27, 38%, 97%);
+
+.site-header-title {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.4rem;
+}  
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    color: $color-text;
+    background-color: $color-bg;
+}
+a {
+    color: $color-text;
+    text-decoration: none;
+    transition: color 500ms;
+    &:hover {
+        color: $danger;
+    }    
+}
