@@ -9,23 +9,23 @@ $light: #fff;
 $dark: #000;
 
 /* Site Theme Colors */
+$color-redhot: #dc3545;
 $color-accent: hsl(77, 29%, 45%);
 $color-text: hsl(0, 0%, 20%);
 $color-subtext: hsl(0, 0%, 30%);
 $color-bg: hsl(27, 38%, 97%);
+$color-grayish: mix($color-bg, black, 70%);
+
 
 .site-header-title {
-    font-family: 'Reem Kufi', sans-serif;
+    font-family: 'Bitter', serif;
     font-size: 1.4rem;
+    color: $color-text;
+    transition: color 500ms;
+    &:hover {
+        color: $color-redhot;
+    }
 }  
-.unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
 body {
     font-family: $font-family-base;
     font-size: $font-size-base;
@@ -35,8 +35,7 @@ body {
 a {
     color: $color-text;
     text-decoration: none;
-    transition: color 500ms;
-    &:hover {
-        color: $danger;
+    /*border-bottom-style: solid;*/
+    border-color: $color-subtext;
+    border-width: 0.1rem;
     }    
-}
