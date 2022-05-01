@@ -1,48 +1,33 @@
 <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+    <div class="container-md">
         <a class="navbar-brand user-select-none" href="#">
-            <img src="https://io.halfstreet.io/assets/img/siteicon.svg" alt="" height="36px" width="36px" class="d-inline-block align-bottom">
+            <img src="https://io.halfstreet.io/assets/img/siteicon.svg" alt="" height="36px" width="36px" 
+                class="d-inline-block align-bottom">
             <span class="site-header-title">{{ .Site.Title }}</span>
         </a>
         <div class="collapse navbar-collapse" id="navbarMain">
             <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">View Latest</a>
+                    <a class="nav-link" href="#">
+                        <i class="bi-newspaper" role="img" aria-hidden="true"></i> Newest
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">View as Graph</a>
+                    <a class="nav-link" href="#">
+                        <i class="bi-diagram-3" role="img" aria-hidden="true"></i> Graph
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Browse by Tag</a>
+                    <a class="nav-link" href="#">
+                        <i class="bi-tags" role="img" aria-hidden="true"></i> Tags
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi-search" role="img" aria-hidden="true"></i> Search
+                    </a>
                 </li>
             </ul>
-            <a href="#" class="d-flex">
-                <i class="bi-search " role="img" aria-label="Search"></i>
-            </a>
         </div>
-        
-
     </div>
 </nav>
-
-{{/* OLD
-*
-*    <div class="container-md p-3">
-*        <div class="d-flex">
-*            <div class="p-2">
-*                <a href="{{ .Site.BaseURL }}/index.html">
-*                    <img src="https://io.halfstreet.io/assets/img/siteicon.svg" alt="site logo" height="40px" width="40px">
-*                </a>
-*            </div>
-*            <div class="p-2 align-self-center unselectable">
-*                <a class="site-header-title" href="{{ .Site.BaseURL }}/index.html">
-*                    {{ .Site.Title }}
-*                </a>
-*            </div>
-*            <div class="ms-auto align-self-center">
-*                <i class="bi-search " role="img" aria-label="Search"></i>
-*            </div>
-*        </div>
-*    </div>
-*
-*/}}

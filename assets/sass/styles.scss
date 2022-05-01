@@ -6,7 +6,7 @@ $info: #0dcaf0;
 $warning: #ffc107;
 $danger: #dc3545;
 $light: #fff;
-$dark: #000;
+/* $dark: hsl(0, 0%, 20%); */
 
 /* Site Theme Colors */
 $color-redhot: #dc3545;
@@ -16,6 +16,27 @@ $color-subtext: hsl(0, 0%, 30%);
 $color-bg: hsl(27, 38%, 97%);
 $color-grayish: mix($color-bg, black, 70%);
 
+.footer-dot {
+    color: $color-grayish;
+}
+
+.site-footer-bg {
+    background-color: $color-text;
+}
+
+.footer-link {
+    color: $color-bg;
+    transition: color 500ms;
+    &:hover {
+        color: $color-grayish;
+    }    
+}
+
+.site-footer-text {
+    font-size: 0.8rem;
+    color: $color-bg;
+    text-decoration: none;
+}
 
 .site-header-title {
     font-family: 'Bitter', serif;
@@ -25,17 +46,27 @@ $color-grayish: mix($color-bg, black, 70%);
     &:hover {
         color: $color-redhot;
     }
-}  
+}
+
+.nav-link {
+    color: $color-subtext;
+    transition: color 500ms;
+    &:hover {
+        color: $color-redhot;
+    }    
+}
+
 body {
     font-family: $font-family-base;
     font-size: $font-size-base;
     color: $color-text;
     background-color: $color-bg;
 }
+
 a {
     color: $color-text;
     text-decoration: none;
     /*border-bottom-style: solid;*/
     border-color: $color-subtext;
     border-width: 0.1rem;
-    }    
+}
