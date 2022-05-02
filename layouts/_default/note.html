@@ -1,8 +1,35 @@
 {{ define "main" }}
-
-<div class="container pb-5">
-  <h1>{{ .Title }}</h1>
-  {{- partial "content-with-wikilinks" . -}}
-</div>
-
+<main>
+  <div class="container pb-5">
+    <div class="d-flex flex-row">  
+      <div class="col-md-8">
+        <div class="flex-column p-2 pb-4 pt-4">
+          <h1>{{ .Title }}</h1>
+          <div class="note-subtitle">
+            Published {{ dateFormat "Jan 2, 2006" .Date }} | Modified {{ dateFormat "Jan 2, 2006" .Lastmod }}
+            <div id="tags-single" class="d-flex flex-row">
+              {{ range .Params.tags }}
+                  <div class="p-1">
+                    <span class="tag-in-list">
+                      <i class="bi bi-tag"></i>
+                      <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
+                    </span>
+                  </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{- partial "content-with-wikilinks" . -}}
+      </div>
+      <div class="col-md-4">
+      {{ partial "backlinks.html" (dict "page" . "heading" "<h4>Links to this note</h4>") }}
+      This is a test
+      </div>
+    </div>
+    <div class="col-md-8">
+      <script defer src="https://commento.ahab.halfstreet.io/js/commento.js"></script>
+      <div id="commento"></div>
+    </div>
+  </div>
+</main>
 {{ end }}
