@@ -10,12 +10,7 @@
             id: "coral_thread",
             autoRender: true,
             rootURL: 'https://talk.half.st',
-            // Uncomment these lines and replace with the ID of the
-            // story's ID and URL from your CMS to provide the
-            // tightest integration. Refer to our documentation at
-            // https://docs.coralproject.net for all the configuration
-            // options.
-            // storyID: '${storyID}',
+            storyID: '{{- .Title -}}',
             storyURL: '{{- .Permalink -}}',
         });
     };
