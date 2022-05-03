@@ -1,0 +1,14 @@
+<h1>{{ .Title }}</h1>
+<div class="note-subtitle">
+  Published {{ dateFormat "Jan 2, 2006" .Date }} | Modified {{ dateFormat "Jan 2, 2006" .Lastmod }}
+  <div id="tags-single" class="d-flex flex-row">
+    {{ range .Params.tags }}
+        <div class="p-1">
+          <span class="tag-in-list">
+            <i class="bi bi-tag"></i>
+            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
+          </span>
+        </div>
+    {{ end }}
+  </div>
+</div>

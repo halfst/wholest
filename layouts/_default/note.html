@@ -1,64 +1,26 @@
 {{ define "main" }}
 <main>
   <div class="container pb-5">
-    <div class="row"> {{/* Note title, dates, and tags */}}
-      <div class="col p-2 pb-4 pt-4">
-        <h1>{{ .Title }}</h1>
-        <div class="note-subtitle">
-          Published {{ dateFormat "Jan 2, 2006" .Date }} | Modified {{ dateFormat "Jan 2, 2006" .Lastmod }}
-          <div id="tags-single" class="d-flex flex-row">
-            {{ range .Params.tags }}
-                <div class="p-1">
-                  <span class="tag-in-list">
-                    <i class="bi bi-tag"></i>
-                    <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
-                  </span>
-                </div>
-            {{ end }}
-          </div>
-        </div>
+
+    <div class="row p-2 pb-4 pt-4">
+      <div class="col">
+        {{- partial "note/note-header.html" . -}}
       </div>
     </div>
-    <div class="row"> {{/* Content, backlinks sidebar */}}
-      
-      <div class="col-md-9"> {{/* Note content with wikilinks */}}
-        {{- partial "content-with-wikilinks" . -}}
+    <div class="row pb-5">
+      <div class="col-md-9">
+        {{- partial "note/content-with-wikilinks.html" . -}}
       </div>
-      
-      <div class="col-md-3"> {{/* Backlinks */}}
-      {{ partial "backlinks.html" (dict "page" . "heading" "<h4>Links to this note</h4>") }}
-      This is a test
+      <div class="col-md-3">
+        {{ partial "note/backlinks.html" (dict "page" . "heading" "<h4>Links to this note</h4>") }}
       </div>
-
     </div>
     <div class="row">
-      <div class="col-md-9">  {{/* Coral Talk -- comment section */}}
-        <div id="coral_thread"></div>
-          <script type="text/javascript">
-            (function() {
-              var d = document, s = d.createElement('script');
-              s.src = 'https://talk.half.st/assets/js/embed.js';
-              s.async = false;
-              s.defer = true;
-              s.onload = function() {
-                  Coral.createStreamEmbed({
-                      id: "coral_thread",
-                      autoRender: true,
-                      rootURL: 'https://talk.half.st',
-                      // Uncomment these lines and replace with the ID of the
-                      // story's ID and URL from your CMS to provide the
-                      // tightest integration. Refer to our documentation at
-                      // https://docs.coralproject.net for all the configuration
-                      // options.
-                      // storyID: '${storyID}',
-                      // storyURL: '${storyURL}',
-                  });
-              };
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
+      <div class="col-md-9">
+        {{ partial "note/comment-section.html" . }}
       </div>
+    </div>
+
   </div>
 </main>
 {{ end }}
