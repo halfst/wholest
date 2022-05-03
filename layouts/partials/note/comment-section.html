@@ -16,7 +16,7 @@
             // https://docs.coralproject.net for all the configuration
             // options.
             // storyID: '${storyID}',
-            // storyURL: '${storyURL}',
+            storyURL: '{{- .Permalink -}}',
         });
     };
     (d.head || d.body).appendChild(s);
