@@ -97,3 +97,24 @@ a {
 .a-no-ul {
     border-bottom-style: none;
 }
+
+.social-icons {
+    color: $color-subtext;
+    font-size: 2em;
+    &:hover {
+        color: $color-redhot;
+    }
+    @media only screen and (max-width: 992px) {
+        display: inline;
+    }
+}
+
+.ul-social-icons {
+    list-style-type:none; 
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    @media only screen and (max-width: 992px) {
+        float: left;
+    }
+}
