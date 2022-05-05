@@ -16,6 +16,7 @@ $color-subtext: hsl(0, 0%, 30%);
 $color-bg: hsl(27, 38%, 97%);
 $color-grayish: mix($color-bg, black, 70%);
 $color-light-grayish: mix($color-bg, black, 90%);
+$color-hs-info: mix($color-bg, $info, 90%);
 
 
 .footer-grayish {
@@ -117,4 +118,12 @@ a {
     @media only screen and (max-width: 992px) {
         float: left;
     }
+}
+
+.div-seedling-box {
+    border-width: 1px;
+    border-style: dotted;
+    border-color: $color-grayish;
+    background-color: $color-hs-info;
+    padding: 1rem;
 }
