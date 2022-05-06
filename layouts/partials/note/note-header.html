@@ -1,10 +1,13 @@
 <h1 class="ms-1">{{ .Title }}</h1>
-<div class="note-date-text ms-4">
-  Published {{ dateFormat "Jan 2, 2006" .Date }} | Modified {{ dateFormat "Jan 2, 2006" .Lastmod }}
+<div class="row ms-4">
+  {{ $date := .Date.Format "Jan 2, 2006" }}
+  {{ $lastmod := .Lastmod.Format "Jan 2, 2006" }}
+  <div class="col-lg note-date-text">Published: {{ $date }}</div>
+  {{ with ne $date $lastmod }}
+    <div class="col-lg note-date-text">Modified: {{ $lastmod }}</div>
+  {{end}}
+  <div class="col-lg note-stage-text">{{- partial "note/stage-of-growth.html" . -}}</div>
 </div>
-  <div class="note-stage-text ms-4">
-    {{- partial "note/stage-of-growth.html" . -}}
-  </div>
 <div id="tags-single" class="ms-4 d-flex flex-row">
   {{ range .Params.tags }}
       <div class="p-1">
