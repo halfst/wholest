@@ -1,14 +1,17 @@
-<h1 style="margin:5;">{{ .Title }}</h1>
-<div class="note-subtitle">
+<h1 class="ms-1">{{ .Title }}</h1>
+<div class="note-date-text ms-4">
   Published {{ dateFormat "Jan 2, 2006" .Date }} | Modified {{ dateFormat "Jan 2, 2006" .Lastmod }}
-  <div id="tags-single" class="d-flex flex-row">
-    {{ range .Params.tags }}
-        <div class="p-1">
-          <span class="tag-in-list">
-            <i class="bi bi-tag"></i>
-            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
-          </span>
-        </div>
-    {{ end }}
+</div>
+  <div class="note-stage-text ms-4">
+    {{- partial "note/stage-of-growth.html" . -}}
   </div>
+<div id="tags-single" class="ms-4 d-flex flex-row">
+  {{ range .Params.tags }}
+      <div class="p-1">
+        <span class="tag-in-list">
+          <i class="bi bi-tag"></i>
+          <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
+        </span>
+      </div>
+  {{ end }}
 </div>

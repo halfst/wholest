@@ -27,10 +27,16 @@ $color-hs-info: mix($color-bg, $info, 90%);
     background-color: $color-text;
 }
 
-.note-subtitle {
+.note-date-text {
     color: $color-subtext;
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+.note-stage-text {
+    color: $color-subtext;
+    font-size: 0.8rem;
+
 }
 
 .footer-link {

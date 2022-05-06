@@ -1,17 +1,16 @@
-Test Txt
 {{ if eq .Params.stageOfGrowth "seedling" }}
     
-    <div class="seedling-box"><i class="fa-solid fa-seedling"></i> This note is a seedling. Over time it will 
-    become a mature thought, but for now it's still in development.</div>
+    <span>Note Stage: <i class="fa-solid fa-seedling"></i> Seedling</span> 
+    {{/*This note is a seedling. Over time it will become a mature thought, but for now it's still in development.*/}}
     
     {{ else if eq .Params.stageOfGrowth "sapling" }}
         
-        <div><i class="fa-brands fa-pagelines"></i> This note is a sapling. It's still a work 
-        in progress, but it should be readable.</div>
+        <span>Note Stage: <i class="fa-brands fa-pagelines"></i> Sapling</span>
+        {{/*This note is a sapling. It's still a work in progress, but it should be readable.*/}}
         
             {{ else if eq .Params.stageOfGrowth "evergreen" }}
 
-            <div><i class="fa-solid fa-tree"></i> This note is an evergreen. It's considered a fully
-            developed thought. It may still be updated from time to time.</div>
+            <span>Note Stage: <i class="fa-solid fa-tree"></i> Evergreen</span>
+            {{/* This note is an evergreen. It's considered a fully developed thought. It may still be updated from time to time. */}}
 
 {{ end }}
