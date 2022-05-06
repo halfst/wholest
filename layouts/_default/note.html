@@ -7,11 +7,11 @@
       </div>
     </div>
     <div class="row p-3">
-      {{with .Params.seedling}}
+
         <div class="col-md-9 pb-3">  
-          {{ partial "note/seedling.html" }}
+          {{- partial "note/stage-of-growth.html" -}}
         </div>
-      {{end}}
+
     </div>
     <div class="row pb-5">
       <div class="col-md-9">
@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <div class="col-md-9">
-        {{ partial "note/comment-section.html" . }}
+        {{- partial "note/comment-section.html" . -}}
       </div>
     </div>
   </div>
