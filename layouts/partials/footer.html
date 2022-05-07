@@ -2,39 +2,33 @@
   <div class="container">
     <div class="py-5">
       <div class="row">
-        <div class="col-4">
-          <h5 class="footer-grayish">Notes</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Recent</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Browse</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Graph</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul"></a></li>
-          </ul>
-        </div>
-  
-        <div class="col-4">
-          <h5 class="footer-grayish">Meta</h5>
+        
+        <div class="d-flex col-4 justify-content-start">
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">About</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Privacy</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Shared Links</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Privacy Policy</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">Terms of Use</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted a-no-ul">RSS Feed</a></li>
           </ul>
         </div>
-  
-        <div class="col-4 align-self-center">
-          <img src="https://io.halfstreet.io/assets/img/siteicon.svg" alt="" height="64px" width="64px">
+
+        <div class="d-flex col align-self-center justify-content-center">
+          <img src="https://io.halfstreet.io/assets/img/footericon.png" alt="" height="128px" width="128px">
+        </div> 
+
+        <div class="d-flex col-4 ">
+          <span class="footer-grayish align-self-center"> {{ .Site.Params.description }}</span>
         </div>
+  
+
       </div>
   
-      <div class="d-flex justify-content-between py-4 my-4 border-top">
-        <p class="footer-grayish">© {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
-        <ul class="list-unstyled d-flex">
-          <li class="ms-3"><a href="#" class="footer-grayish a-no-ul"><i class="bi-github" role="img" aria-hidden="true"></i></a></li>
-          <li class="ms-3"><a href="#" class="footer-grayish a-no-ul"><i class="bi-twitter" role="img" aria-hidden="true"></i></a></li>
-          <li class="ms-3"><a href="#" class="footer-grayish a-no-ul"><i class="bi-linkedin" role="img" aria-hidden="true"></i></a></li>
-        </ul>
+      <div class="hstack py-4 my-4 gap-2 border-top">
+        <div class="footer-grayish">© {{ now.Year }} {{ .Site.Title }}</div>
+        <div class="ms-auto"><a href="#">Privacy</a></div>
+        <div class="vr"></div>
+        <div class=""><a href="#">Terms of Use</a></div>
       </div>
     </div>
   </div>
