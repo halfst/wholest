@@ -2,14 +2,12 @@
 <main>
   <div class="container">
     <div class="row p-5">
-      <div class="col-lg-3 pb-3">
+      <div class="col-lg-3">
         <img class="rounded-circle mx-auto d-block img-fluid" src="{{- .Params.pfpImageURL -}}" alt="{{- .Params.pfpAltText -}}"/>
-      </div>
-      <div class="col-lg-6 my-auto">
-        {{- .Content -}}
-      </div>
-      <div class="col-lg-1">
         {{- partial "about/social-media-links.html" . -}}
+      </div>
+      <div class="col-lg-9">
+        {{- .Content -}}
       </div>
     </div>
   </div>

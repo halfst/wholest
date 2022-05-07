@@ -23,6 +23,10 @@ $color-hs-info: mix($color-bg, $info, 90%);
     color: $color-grayish;
 }
 
+.footer-accent-color {
+    color: $color-accent;
+}
+
 .site-footer-bg {
     background-color: $color-text;
 }
@@ -111,17 +115,12 @@ a {
     &:hover {
         color: $color-redhot;
     }
-    @media only screen and (max-width: 992px) {
-        display: inline;
-    }
 }
 
-.ul-social-icons {
+.div-social-icons {
     list-style-type:none; 
     overflow: hidden;
-    @media only screen and (max-width: 992px) {
-        float: left;
-    }
+    padding:0;
 }
 
 .div-seedling-box {
