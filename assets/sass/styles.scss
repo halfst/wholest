@@ -37,6 +37,12 @@ $color-hs-info: mix($color-bg, $info, 90%);
     font-weight: 500;
 }
 
+.note-date-text-400 {
+    color: $color-subtext;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
 .note-stage-text {
     color: $color-subtext;
     font-size: 0.8rem;
