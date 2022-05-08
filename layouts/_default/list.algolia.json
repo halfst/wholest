@@ -13,7 +13,6 @@
     {{- .Scratch.SetInMap "temp" "content" $hit.Plain -}}
     {{- .Scratch.SetInMap "temp" "date" $hit.Date.UTC.Unix -}}
     {{- .Scratch.SetInMap "temp" "description" $hit.Description -}}
-    {{- .Scratch.SetInMap "temp" "image" $hit.Params.Image -}}
     {{- .Scratch.SetInMap "temp" "dir" $hit.File.Dir -}}
     {{- .Scratch.SetInMap "temp" "path" "temp" -}}
     {{- .Scratch.SetInMap "temp" "expirydate" $hit.ExpiryDate.UTC.Unix -}}
