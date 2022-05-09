@@ -1,0 +1,9 @@
+{{/* Autofocus on search box on modal open */}}
+<script type="text/javascript">
+    var searchModal = document.getElementById('searchModal')
+    var searchBox = document.getElementById('searchBox')
+
+    searchModal.addEventListener('shown.bs.modal', function () {
+        searchBox.focus()
+    })
+</script>

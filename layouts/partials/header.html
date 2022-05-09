@@ -6,7 +6,12 @@
             <span class="site-header-title">{{ .Site.Title }}</span>
         </a>
         <div id="navbarMain ms-auto mb-4 mb-lg-0">
-            <a class="nav-link a-no-ul" href="#"><i class="bi-search" role="img" aria-hidden="true"></i> Search</a>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <i class="bi-search" role="img" aria-hidden="true"></i> Search
+            </button>
+            {{ partial "search/search-modal.html" . }}
+
         </div>
     </div>
 </nav>
+

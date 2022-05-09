@@ -35,7 +35,10 @@
             showReset: false,
             showSubmit: false,
             autofocus: true,
-        }),
+        }),    
+        instantsearch.widgets.poweredBy({
+            container: '#powered-by',
+          }),
         instantsearch.widgets.hits({
             container: "#searchResults",
             templates: {

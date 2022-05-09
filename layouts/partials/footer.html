@@ -33,4 +33,6 @@
   {{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
 
   <script src="{{$js.RelPermalink}}" defer></script>
+
+  {{ partial "search/search-box-autofocus.html" . }}
 </footer>
