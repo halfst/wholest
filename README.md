@@ -1,7 +1,7 @@
 # wholest
 A clean and modern Hugo theme for digital gardens and blogs.
 
-THIS IS STILL IN DEVELOPMENT
+**THIS IS STILL IN DEVELOPMENT**
 
 Dependencies:
 - Bootstrap 5.1
