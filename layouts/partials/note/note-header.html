@@ -3,9 +3,13 @@
   {{ $date := .Date.Format "Jan 2, 2006" }}
   {{ $lastmod := .Lastmod.Format "Jan 2, 2006" }}
   <div class="note-date-text">Published: {{ $date }}</div>
-  {{ with ne $date $lastmod }}
+  {{ with ne $date $lastmod . }}
     <div class="vr"></div>
     <div class="note-date-text-400">Modified: {{ $lastmod }}</div>
+    <div class="vr"></div>
+    <div class="note-stage-text">
+      <a href="https://github.com/halfst/half.st/commits/master/content/notes/{{ $.File.BaseFileName -}}.{{- $.File.Ext -}}">View History</a>
+    </div>
   {{end}}
 
 </div>
@@ -19,5 +23,7 @@
         </div>
     {{ end }}
   </div>
-  <div class="note-stage-text">{{- partial "note/stage-of-growth.html" . -}}</div>
+  <div class="note-stage-text">
+    {{- partial "note/stage-of-growth.html" . -}}
+  </div>
 </div>
