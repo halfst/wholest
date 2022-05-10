@@ -1,0 +1,11 @@
+<h2>Recently Published</h2>
+<ul class="recent-lists-list">
+    {{- range ( where site.RegularPages "Section" "notes" | first 5 ) }}
+        <li>{{ .Date.Format "1/2/06" }} <a href="{{ .Permalink }}">{{ .Title }}</a> 
+            {{ range .Params.tags }}
+              <span class="tag-in-list m-1">
+                <i class="fa-solid fa-tag"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
+              </span>
+            {{ end }}
+    {{end}}
+</ul>

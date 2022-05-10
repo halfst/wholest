@@ -38,7 +38,10 @@
         }),    
         instantsearch.widgets.poweredBy({
             container: '#powered-by',
-          }),
+            cssClasses: {
+                link: 'a-no-ul',
+            },    
+        }),
         instantsearch.widgets.hits({
             container: "#searchResults",
             templates: {
