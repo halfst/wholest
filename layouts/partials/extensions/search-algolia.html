@@ -2,10 +2,10 @@
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-    const searchClient = algoliasearch('7JOBYLKE6B', 'bc332bf95727f181e23da4357638f31a');
+    const searchClient = algoliasearch('{{ .Site.Params.angoliaappid }}', '{{ .Site.Params.angoliasearchapi }}');
 
     const search = instantsearch({
-        indexName: 'half.st',
+        indexName: '{{ .Site.Params.angoliaindexname }}',
         searchClient,
     });
     const hitTemplate = 
