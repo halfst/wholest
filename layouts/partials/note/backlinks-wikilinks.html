@@ -1,6 +1,6 @@
 {{ $backlinks := slice }}
 {{ $page_title := .page.Title }}
-{{ $page_title_re := printf `\[\[(?i)%s(?-i)\]\]` $page_title }} {{/* Regex for finding piped or regular wikilinks to this page */}}
+{{ $page_title_re := printf `\[\[(?i)%s(?-i)\|?.*\]\]` $page_title }} {{/* Regex for finding piped or regular wikilinks to this page */}}
 
 {{ range where site.RegularPages "RelPermalink" "ne" .page.RelPermalink }} {{/* Search all pages besides the current page */}}
     {{ if (findRE $page_title_re .RawContent 1) }}
