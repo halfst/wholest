@@ -11,7 +11,7 @@
         {{- partial "note/content-with-wikilinks.html" . -}}
       </div>
       <div class="col-md-3">
-        {{ partial "note/backlinks.html" (dict "page" . "heading" "<h4>Links to this note</h4>") }}
+        {{ partial "note/backlinks-wikilinks.html" (dict "page" . "heading" "<h4>Notes linking here:</h4>") }}
       </div>
     </div>
     <div class="row">
