@@ -8,3 +8,4 @@ Dependencies:
 
 Credits:
 - [Quinn Casey for wikilinks implementation](https://quinncasey.com/tools/hugo-wikilink-support/)
+- [Kaushal Modi for the bulk of the backlinks functionality](https://scripter.co/parsing-backlinks-in-hugo/)
