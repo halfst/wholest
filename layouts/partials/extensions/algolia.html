@@ -1,0 +1,14 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+<script>
+  algoliasearchNetlify({
+    appId: '{{ .Site.Params.algoliaappid }}',
+    apiKey: '{{ .Site.Params.algoliasearchapi }}',
+    siteId: '{{ .Site.Params.algoliasiteid }}',
+    branch: '{{ .Site.Params.algoliabranch }}',
+    selector: 'div#search',
+  });
+</script>
