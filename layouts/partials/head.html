@@ -1,46 +1,13 @@
 <head>
-    <title>{{if .IsHome}}{{ .Site.Title }}{{else}}{{.Title}} – {{.Site.Title}}{{end}}</title>
-    <meta charset="utf-8">
-    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Summary}}{{end}}" />
-    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}" />
-    <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#839652">
-    <link rel="canonical" href="{{ .Permalink }}" />
-
-    {{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") }}
-
-    {{ $style := resources.Get "sass/main.scss" | toCSS  $options | minify }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
-
-    {{/* RSS feed link */}}
-    {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
-
-    {{/* Favicon shit */}}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#839652">
-    <meta name="msapplication-TileColor" content="#00aba9">
-    
-    {{/* Preconnect to CDN */}}
-    <link rel="preconnect" href="https://io.halfstreet.io" crossorigin>
-
-    {{/* Fonts and icons */}}
+    {{ partial "head/meta.html" . }}
+    {{ partial "head/CSS.html" . }}
+    {{ partial "head/RSS.html" . }}
+    {{ partial "head/favicon.html" . }}
+    {{ partial "head/CDN-preconnect.html"}}
     {{ partial "extensions/google-fonts.html" . }}
     {{ partial "extensions/bootstrap-icons.html" . }}
     {{ partial "extensions/font-awesome.html" . }}
-
-    {{/* Netlify identify widget for Netlify CMS */}}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
-    {{/* Matomo Tracking */}} 
+    {{ partial "head/netlify-identify.html"}}
     {{ partial "extensions/matomo.html" . }}
-    
-  
-  
+ 
 </head>

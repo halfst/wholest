@@ -1,16 +1,30 @@
+{{/* Initiate Bootstrap popovers */}}
+
+
+
 {{ if eq .Params.stageOfGrowth "seedling" }}
     
-    <span>Note Stage: <i class="fa-solid fa-seedling"></i> Seedling</span> 
-    {{/*This note is a seedling. Over time it will become a mature thought, but for now it's still in development.*/}}
+    <div id="stage-popver">Note Stage: 
+        <a herf="#" container="body" data-bs-toggle="popover" title="Seedling" data-bs-content="This note is a seedling. Over time it will become a mature thought, but for now it's still in development.">
+            <i class="fa-solid fa-seedling"></i> Seedling
+        </a>
+    </div> 
     
     {{ else if eq .Params.stageOfGrowth "sapling" }}
         
-        <span>Note Stage: <i class="fa-brands fa-pagelines"></i> Sapling</span>
-        {{/*This note is a sapling. It's still a work in progress, but it should be readable.*/}}
-        
+        <span>Note Stage: 
+            <a herf="#" data-bs-toggle="popover" title="Sapling" data-bs-content="This note is a sapling. It's still a work in progress, but it should be readable.">
+                <i class="fa-brands fa-pagelines"></i> Sapling
+            </a>
+        </span>
+
             {{ else if eq .Params.stageOfGrowth "evergreen" }}
 
-            <span>Note Stage: <i class="fa-solid fa-tree"></i> Evergreen</span>
-            {{/* This note is an evergreen. It's considered a fully developed thought. It may still be updated from time to time. */}}
+            <span>Note Stage: 
+                <a herf="#" data-bs-toggle="popover" title="Evergreen" data-bs-content="This note is an evergreen. It's considered a fully developed thought. It may still be updated from time to time.">                
+                    <i class="fa-solid fa-tree"></i> Evergreen
+                </a>
+            </span>                    
+            
 
 {{ end }}
