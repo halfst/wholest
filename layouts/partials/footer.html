@@ -1,7 +1,7 @@
 <footer class="footer site-footer-bg mt-auto">
   <div class="container-md py-4">
     <div class="row pt-2 pb-2">
-      <div class="d-flex- col-4">
+      <div class="d-flex col-4">
         <div class="hstack gap-2 align-items-end">
           <div class=""><a href="/about" class="footer-grayish a-no-ul">About</a></div>
           <div class="vr footer-grayish"></div>
@@ -21,8 +21,11 @@
       <div><a href="/terms" class="footer-grayish a-no-ul">Terms of Use</a></div>
     </div>
   </div>
-
-  {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
-  {{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
-  <script src="{{$js.RelPermalink}}" defer></script>
+  {{/* Initialize Bootstrap Popovers */}}
+  <script async="false">
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
 </footer>
