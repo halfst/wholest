@@ -9,6 +9,9 @@
         {{/* Insert seach here */}}
         <div id="search"></div>
         {{ partial "extensions/algolia.html" . }}
+        <div class="pt-4 px-3">
+          {{ partial "search/recently-published-table.html" . }}
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

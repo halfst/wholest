@@ -98,6 +98,7 @@ body {
     padding: 0.2rem;
     font-weight: 500;
     border-radius: 8px;
+    line-height: 2rem;
 }
 
 a {
@@ -151,4 +152,12 @@ a {
 
 .footer-border-top {
     border-top: 1px solid #819451;
+}
+
+.recent-notes-summary {
+    font-weight: 400;
+}
+
+.nobr {
+    white-space: nowrap;
 }
