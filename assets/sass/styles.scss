@@ -16,6 +16,7 @@ $color-subtext: hsl(0, 0%, 30%);
 $color-bg: hsl(27, 38%, 97%);
 $color-grayish: mix($color-bg, black, 70%);
 $color-light-grayish: mix($color-bg, black, 90%);
+$color-dark-grayish: mix($color-bg, black, 50%);
 $color-hs-info: mix($color-bg, $info, 90%);
 
 
@@ -135,4 +136,19 @@ a {
 
 .note-header-stage {
     border-bottom-style: dashed;  
+}
+
+.footer-text {
+    border-bottom-width: 0px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom-text {
+    border-bottom-width: 0px;
+    font-size: 0.9rem;
+    color: $color-dark-grayish;
+}
+
+.footer-border-top {
+    border-top: 1px solid #819451;
 }

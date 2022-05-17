@@ -1,24 +1,34 @@
 <footer class="footer site-footer-bg mt-auto">
   <div class="container-md py-4">
-    <div class="row pt-2 pb-2">
-      <div class="d-flex col-4">
-        <div class="hstack gap-2 align-items-end">
-          <div class=""><a href="/about" class="footer-grayish a-no-ul">About</a></div>
-          <div class="vr footer-grayish"></div>
-          <div class=""><a href="https://to.half.st" class="footer-grayish a-no-ul">Shared Links</a></div>
-          <div class="vr footer-grayish"></div>
-          <div class=""><a href="/index.xml" class="footer-grayish a-no-ul">RSS Feed</a></div>
-        </div>
+    <div class="row py-2">
+      <div class="col">
+        <ul class="nav flex-column flex-md-row">
+          <li class="nav-item p-2">
+            <a href="/" class="a-no-ul footer-grayish">Home</a>  
+          </li>
+          <li class="nav-item p-2">
+            <a href="/about" class="a-no-ul footer-grayish">About</a>
+          </li>
+          <li class="nav-item p-2">
+            <a href="https://to.half.st" class="a-no-ul footer-grayish">Bookmarks</a>
+          </li>
+          <li class="nav-item p-2">
+            <a href="/index.xml" class="a-no-ul footer-grayish">RSS</a>
+          </li>
+        </ul>
       </div>
-      <div class="d-flex col-8 justify-content-end">
-        <span class="footer-accent-color"> {{ .Site.Params.description }}</span>
+      <div class="col d-none d-md-flex pb-1 align-items-end justify-content-end">
+        <span class="footer-accent-color footer-text d-none d-md-block">{{ .Site.Params.description }}</span>
+      </div>
+      <div class="col d-flex d-md-none pb-1 align-items-center justify-content-end">
+        <img src="/img/assets/site-icon-96x96.svg" width="96px" height="96px" class="d-flex d-md-none" alt="site logo">
       </div>
     </div>
-    <div class="hstack border-top gap-2 pt-2">
-      <div class="footer-grayish">{{- .Site.Copyright -}}</div>
-      <div class="ms-auto"><a href="/privacy" class="footer-grayish a-no-ul">Privacy</a></div>
-      <div class="vr footer-grayish"></div>
-      <div><a href="/terms" class="footer-grayish a-no-ul">Terms of Use</a></div>
+    <div class="hstack gap-2 pt-2 footer-border-top">
+      <div class="footer-bottom-text">{{- .Site.Copyright -}}</div>
+      <div class="ms-auto"><a href="/privacy" class="footer-bottom-text">Privacy</a></div>
+      <div class="vr footer-bottom-text"></div>
+      <div><a href="/terms" class="footer-bottom-text">Terms of Use</a></div>
     </div>
   </div>
   {{/* Initialize Bootstrap Popovers */}}
