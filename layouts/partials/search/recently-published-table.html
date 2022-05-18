@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    {{- range ( where site.RegularPages "Section" "notes" | first 5 ) }}
+    {{- range ( where site.RegularPages "Section" "notes" | first 3 ) }}
       <tr>
         <th scope="col" class="d-none d-md-table-cell"><img src="{{ .Params.image }}" alt="{{ .Params.imagealt }}" width="120px" height="63px"></th>
         <th scope="col"><a href="{{ .Permalink }}" class="a-no-ul">{{ .Title }}<p class="recent-notes-summary">{{ .Summary }}</p></a></th> 
