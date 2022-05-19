@@ -21,7 +21,7 @@ $color-hs-info: mix($color-bg, $info, 90%);
 
 
 .footer-grayish {
-    color: $color-grayish;
+    color: $color-light-grayish;
 }
 
 .footer-accent-color {
@@ -29,7 +29,7 @@ $color-hs-info: mix($color-bg, $info, 90%);
 }
 
 .site-footer-bg {
-    background-color: $color-text;
+    background-color: #222222;
 }
 
 .note-date-text {
@@ -147,7 +147,7 @@ a {
 .footer-bottom-text {
     border-bottom-width: 0px;
     font-size: 0.9rem;
-    color: $color-dark-grayish;
+    color: $color-grayish;
 }
 
 .footer-border-top {
