@@ -161,3 +161,10 @@ a {
 .nobr {
     white-space: nowrap;
 }
+
+.home-tag-box {
+    padding: 0.3rem;
+    margin: 0.2rem;
+    background-color: $color-light-grayish;
+    border: 2px solid $color-dark-grayish;
+}

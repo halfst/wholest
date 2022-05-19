@@ -1,8 +1,7 @@
-<h4>Browse Notes by Tag</h4>
-<div class="row">
+<h5>Notes by Tag</h5>
+
 {{ range site.Taxonomies.tags }}
-    <div class="col-sm-6 col-md-4">
-        <a href="{{ .Page.Permalink }}">{{ .Page.Params.Title }}</a>
-    </div>
+    
+        <button class="btn home-tag-box"><a href="{{ .Page.Permalink }}" class="a-no-ul">{{ .Page.Params.Title }}</a></button>
+    
 {{ end }}
-</div>
