@@ -17,7 +17,7 @@
     {{ range .Params.tags }}
         <div class="p-1">
           <span class="tag-in-list">
-            <i class="fa-solid fa-tag"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
+            <i class="fa fa-tag pe-1"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
           </span>
         </div>
     {{ end }}
