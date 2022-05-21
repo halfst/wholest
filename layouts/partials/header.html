@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-md">
         <a class="navbar-brand user-select-none a-no-ul" href="/">
-            <img src="/img/assets/siteicon.svg" alt="" height="36px" width="36px" 
-                class="d-inline-block align-bottom">
-            <span class="site-header-title">{{ .Site.Title }}</span>
+            <img src="/img/assets/siteicon.svg" alt="" height="48px" width="48px" class="d-inline-block align-bottom">
+            <span class="site-header-title align-top">{{ .Site.Title }}</span>
         </a>
-        <div id="navbarMain ms-auto mb-4 mb-lg-0">
+        <div class="navbar-item ms-auto">            
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#searchModal">
-                <i class="bi-search" role="img" aria-hidden="true"></i> Search
+                <i class="fa fa-search"></i> Search
             </button>
             {{ partial "search/search-modal.html" . }}
         </div>

@@ -11,12 +11,12 @@
   <tbody>
     {{- range ( where site.RegularPages "Section" "notes" | first 3 ) }}
       <tr>
-        <th scope="col" class="d-none d-md-table-cell"><img src="{{ .Params.image }}" alt="{{ .Params.imagealt }}" width="120px" height="63px"></th>
+        <th scope="col" class="d-none d-md-table-cell"><img src="{{ .Params.image }}" alt="{{ .Params.imagealt }}" class="note-image-preview" width="120px" height="63px"></th>
         <th scope="col"><a href="{{ .Permalink }}" class="a-no-ul">{{ .Title }}<p class="recent-notes-summary">{{ .Summary }}</p></a></th> 
         <th scope="col">{{ .Date.Format "1/2/06" }}</th>
         <th scope="col" class="d-none d-md-table-cell">
           {{ range .Params.tags }}
-            <span class="tag-in-list m-1 nobr">
+            <span class="tag-in-list m-1 p-1 nobr">
               <i class="fa-solid fa-tag"></i>&nbsp;<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
             </span>
           {{ end }}

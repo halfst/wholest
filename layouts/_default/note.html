@@ -7,10 +7,10 @@
       </div>
     </div>
     <div class="row pb-5">
-      <article class="col-md-9">
+      <article class="col-md-8">
         {{- partial "note/content-with-wikilinks.html" . -}}
       </article>
-      <div class="col-md-3">
+      <div class="col-md-4">
         {{ partial "note/backlinks-wikilinks.html" (dict "page" . "heading" "<h4>Notes linking here:</h4>") }}
       </div>
     </div>
