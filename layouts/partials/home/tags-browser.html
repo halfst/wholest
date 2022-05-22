@@ -1,7 +1,7 @@
-<h5>Notes by Tag</h5>
+<h5>View by Tag</h5>
 
 {{ range site.Taxonomies.tags }}
     
-        <button class="btn home-tag-box"><a href="{{ .Page.Permalink }}" class="a-no-ul">{{ .Page.Params.Title }}</a></button>
+        <button class="btn home-tag-box"><i class="fa fa-tags pe-1" aria-hidden="true"></i><a href="{{ .Page.Permalink }}" class="a-no-ul">{{ .Page.Params.Title }}&nbsp;({{ .Count }})</a></button>
     
 {{ end }}

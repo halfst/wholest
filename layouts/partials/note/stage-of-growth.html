@@ -1,22 +1,22 @@
-{{ if eq .Params.stageOfGrowth "seed" }}
+{{ if eq .Params.maturity "seed" }}
 
-        <img src="/img/assets/category-seed.svg" alt="seed" height="24px" width="24px">
+        <img src="/img/assets/maturity-seed.svg" alt="seed" height="24px" width="24px">
         <a href="#" tabindex="0" data-bs-trigger="hover focus" class="note-header-stage" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Seed" 
             data-bs-content="This note is a seed. Over time it will become a mature thought, but for now it's still in development.">
             Seed
         </a>
     
-    {{ else if eq .Params.stageOfGrowth "sapling" }}
+    {{ else if eq .Params.maturity "sapling" }}
         
-            <img src="/img/assets/category-sapling.svg" alt="sapling" height="24px" width="24px"> 
+            <img src="/img/assets/maturity-sapling.svg" alt="sapling" height="24px" width="24px"> 
             <a href="#" tabindex="0" data-bs-trigger="hover focus" class="note-header-stage" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Sapling" 
                 data-bs-content="This note is a sapling. It's still a work in progress, but it should be readable.">
                 Sapling
             </a>
 
-            {{ else if eq .Params.stageOfGrowth "evergreen" }}
+            {{ else if eq .Params.maturity "evergreen" }}
 
-                <img src="/img/assets/category-evergreen.svg" alt="evergreen" height="24px" width="24px">
+                <img src="/img/assets/maturity-evergreen.svg" alt="evergreen" height="24px" width="24px">
                 <a href="#" tabindex="0" data-bs-trigger="hover focus" class="note-header-stage" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Evergreen"  
                     data-bs-content="This note is an evergreen. It's considered a fully developed thought. It may still be updated from time to time.">                
                     Evergreen

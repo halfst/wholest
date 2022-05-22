@@ -1,0 +1,10 @@
+<h5>View by Category</h5>
+
+{{ range site.Taxonomies.maturity }}
+    
+        <button class="btn home-tag-box">
+                <img src="{{ .Page.Params.icon }}" class="pe-1" alt="seed" height="24px" width="24px">
+                <a href="{{ .Page.Permalink }}" class="a-no-ul">{{ .Page.Params.Title }}&nbsp;({{ .Count }})</a>
+        </button>
+    
+{{ end }}
