@@ -1,0 +1,20 @@
+<h5>Shared Bookmarks</h5>
+<table class="table mt-n5">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+{{ $url := "https://rss.app/feeds/nMYAfi4CE1ykKtRp.csv" }}
+{{ $sep := "," }}
+{{ range $i, $r := getCSV $sep $url }}
+  {{ if and (gt $i 0) (lt $i 4) }}
+    <tr>
+      <th scope="col"><a href="{{ index $r 7 }}" class="a-no-ul">{{ index $r 6 }}</a></th>
+      <th scope="col" class="recent-notes-summary">{{ index $r 8 | truncate 120 }}</th>
+      <th scope="col">{{$d := index $r 12}} {{ time.Format "1/2/06" $d }}</th>
+    </tr>
+  {{ end }}
+{{ end }}
+  </tbody>
+</table>
