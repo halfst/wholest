@@ -5,6 +5,6 @@
     {{ partial "head/favicon.html" . }}
     {{ partial "head/CDN-preconnect.html"}}
     {{ partial "head/netlify-identify.html"}}
-    {{ partial "extensions/google-analytics.html" }}
+    {{ template "_internal/google_analytics.html" . }}
     {{ partial "extensions/bootstrap-bundle-5.0.2.html" }}
 </head>
