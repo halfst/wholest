@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container">
+  <div class="row d-flex">  
+    <div class="col-md-8 py-2">
+      {{ partial "home/recently-modified-table.html" }}
+    </div>
+    <div class="col-md-4 py-2">
+      {{ partial "home/recent-bookmarks-table.html" }}
+    </div>
+  </div>
+</div>
+{{ partial "home/netlify-identify.html" }}
+{{ end }}
