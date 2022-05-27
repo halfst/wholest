@@ -3,18 +3,11 @@
     <div class="row py-2">
       <div class="col">
         <ul class="nav flex-column flex-md-row">
-          <li class="nav-item p-2">
-            <a href="/" class="a-no-ul footer-grayish">Home</a>  
-          </li>
-          <li class="nav-item p-2">
-            <a href="/about" class="a-no-ul footer-grayish">About</a>
-          </li>
-          <li class="nav-item p-2">
-            <a href="https://to.half.st" class="a-no-ul footer-grayish">Bookmarks</a>
-          </li>
-          <li class="nav-item p-2">
-            <a href="/index.xml" class="a-no-ul footer-grayish">RSS</a>
-          </li>
+          {{range .Site.Menus.footertopnav}}
+            <li class="nav-item p-2">
+              <a href="{{.URL}}" class="a-no-ul footer-grayish">{{.Name}}</a>  
+            </li>
+          {{end}}  
         </ul>
       </div>
       <div class="col d-none d-md-flex pb-1 align-items-end justify-content-end">
@@ -25,10 +18,18 @@
       </div>
     </div>
     <div class="hstack gap-2 pt-2 footer-border-top">
-      <div class="footer-bottom-text"><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp;{{ now.Year }}&nbsp;{{- .Site.Copyright -}}</div>
-      <div class="ms-auto"><a href="/privacy" class="footer-bottom-text">Privacy</a></div>
-      <div class="vr footer-bottom-text"></div>
-      <div><a href="/terms" class="footer-bottom-text">Terms of Use</a></div>
+      <div class="footer-bottom-text">
+        <i class="fa fa-copyright" aria-hidden="true"></i>
+        &nbsp;{{ now.Year }}&nbsp;{{- .Site.Copyright -}}
+      </div>
+      {{range $i, $e := .Site.Menus.footerbottomnav}}
+        {{if eq $i 0}}
+          <div class="ms-auto"><a href="{{.URL}}" class="footer-bottom-text">{{.Name}}</a></div>
+        {{else}}
+          <div class="vr footer-bottom-text"></div>
+          <div><a href="{{.URL}}" class="footer-bottom-text">{{.Name}}</a></div>
+        {{end}}
+      {{end}}
     </div>
   </div>
   {{/* Initialize Bootstrap Popovers */}}

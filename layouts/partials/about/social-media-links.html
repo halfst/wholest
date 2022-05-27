@@ -1,27 +1,9 @@
 <nav class="hstack gap-2 justify-content-center pt-2">
+    {{ range .Site.Params.about.socials.items }}
     <div class="nav-item">
-        <a href="https://www.github.com/halfst" target="_blank" class="a-no-ul" aria-label="Github">
-            <i class="fa fa-github fa-fw social-icons"></i>
+        <a href="{{.url}}" target="_blank" class="a-no-ul" aria-label="{{.name}}">
+            <i class="fa {{.faIcon}} fa-fw social-icons"></i>
         </a>
     </div>
-    <div class="nav-item">
-        <a href="https://www.twitter.com/_halfst" target="_blank" class="a-no-ul" aria-label="Twitter">
-            <i class="fa fa-twitter fa-fw social-icons"></i>
-        </a>
-    </div>
-    <div class="nav-item">
-        <a href="https://ejl.st" target="_blank" class="a-no-ul" aria-label="Professional Profile">
-            <i class="fa fa-user-circle-o fa-fw social-icons"></i>
-        </a>
-    </div>
-    <div class="nav-item">
-        <a href="https://t.me/ethanjlewis" target="_blank" class="a-no-ul" aria-label="Telegram">
-            <i class="fa fa-telegram fa-fw social-icons"></i>
-        </a>
-    </div>
-    <div class="nav-item">
-        <a href="https://www.paypal.me/ethanjoshualewis" target="_blank" class="a-no-ul" aria-label="Paypal">
-            <i class="fa fa-paypal fa-fw social-icons"></i>
-        </a>
-    </div>
+    {{ end }}
 </nav>

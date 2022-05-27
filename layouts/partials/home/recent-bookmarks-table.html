@@ -11,8 +11,8 @@
   {{ if and (gt $i 0) (lt $i 4) }}
     <tr>
       <th scope="col"><a href="{{ index $r 7 }}" class="a-no-ul">{{ index $r 6 }}</a></th>
-      <th scope="col" class="recent-notes-summary">{{ index $r 8 | truncate 120 }}</th>
-      <th scope="col">{{$d := index $r 12}} {{ time.Format "1/2/06" $d }}</th>
+      <td>{{ index $r 8 | truncate 120 }}</td>
+      <td>{{$d := index $r 12}} {{ time.Format "1/2/06" $d }}</td>
     </tr>
   {{ end }}
 {{ end }}

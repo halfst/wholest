@@ -3,11 +3,12 @@
   <div class="container">
     <div class="row p-5">
       <div class="col-lg-3">
-        <img class="rounded-circle mx-auto d-block img-fluid" src="{{- .Params.pfpImageURL -}}" alt="{{- .Params.pfpAltText -}}"/>
+        <img class="rounded-circle mx-auto d-block img-fluid" src="{{.Site.Params.about.pfpURL}}" alt="profile picture"/>
         {{- partial "about/social-media-links.html" . -}}
       </div>
       <div class="col-lg-9">
-        {{- .Content -}}
+        <h1 class="pt-2">{{ .Site.Params.about.pageTitle }}</h3>
+        {{ .Site.Params.about.pageContent | markdownify }}
       </div>
     </div>
   </div>
