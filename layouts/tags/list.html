@@ -3,7 +3,7 @@
     <div class="container pb-5">
         <article>
             <header>
-                <h1>{{.Title}}</h1>
+                <h1>{{with ne .Title "Tags"}}<a href="/tags/">Tags</a>/{{end}}{{.Title}}</h1>
             </header>
             <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
             {{.Content}}

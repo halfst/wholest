@@ -3,7 +3,7 @@
     <div class="container pb-5">
         <article>
             <header>
-                <h1>{{.Title}}</h1>
+                <h1>{{with ne .Title "Maturity"}}<a href="/maturity/">Maturity</a>/{{end}}{{.Title}}</h1>
             </header>
             <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
             {{.Content}}
@@ -23,7 +23,13 @@
                     <td>{{.Date.Format "Jan 2, 2006"}}</td>
                     <th scope="col"><a href="{{.Permalink}}">{{.Title}}</a></th>
                     <td><img src="/img/assets/maturity-{{.Params.maturity}}.svg" class="pe-1" height="24px" width="24px">{{.Params.maturity}}</td>
-                    <td><p class="recent-notes-summary">{{ .Summary }}</p></td>
+                    <td>
+                        {{ range .Params.tags }}
+                          <span class="tag-in-list m-1 nobr">
+                            <i class="fa fa-tag pe-1"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="a-no-ul">{{ . }}</a>
+                          </span>
+                        {{ end }}
+                    </td> 
                 </tr>
                 {{end}}
             </tbody>
