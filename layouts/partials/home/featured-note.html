@@ -1,0 +1,31 @@
+
+<table class="table mt-n5">
+    <thead><tr><h5>Featured Note</h5></tr></thead>
+    <tbody>
+      
+      {{- range sort (where site.RegularPages ".Params.featured" true) ".Params.lastmod" "desc" | first 1 }}
+        <tr>
+          <td class></td>
+          <th scope="col">
+            <a href="{{ .Permalink }}" class="a-no-ul">
+              <div><img src="{{ .Params.cover }}" alt="{{ .Params.imagealt }}" class="img-fluid"></div>
+              <h5>{{ .Title }}</h5>
+            </a>
+              <div class="recent-activity-date-text pb-1">
+                <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Posted&nbsp;{{.Date.Format "Jan 2, 2006"}}
+              </div>
+              <span class="recent-activity-summary">{{ .Summary }}</span><br>
+              <a href="{{ .Permalink }}" class="recent-activity-summary">Read more</a>
+              
+            
+          </th> 
+          <td>
+  
+          </td>
+          <td class="d-none d-md-table-cell">
+
+          </td>  
+        </tr>
+      {{end}}
+    </tbody>
+  </table>

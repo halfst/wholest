@@ -156,7 +156,8 @@ a {
     border-top: 1px solid #819451;
 }
 
-.recent-notes-summary {
+.recent-activity-summary {
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -172,3 +173,13 @@ a {
     border-radius: 6px;
 }
 
+.recent-activity-date-date {
+    font-size: 12px;   
+    font-weight: 400;
+    font-style: italic; 
+}
+
+.recent-activity-date-text {
+    font-size: 12px;
+    font-weight: 400;
+}

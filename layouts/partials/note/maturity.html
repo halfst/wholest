@@ -21,7 +21,19 @@
                     data-bs-content="This note is an evergreen. It's considered a fully developed thought. It may still be updated from time to time.">                
                     Evergreen
                 </a>
-              
+                
+{{/*
+Need to find a way to make this work:
+
+{{ range (where eq .Site.Params.maturity .Params.maturity)}}
+    <img src="{{.iconurl}}" alt="{{.term}}" height="24px" width="24px">
+    <a href="#" tabindex="0" data-bs-trigger="hover focus" class="note-header-stage" data-bs-container="body" 
+       data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="{{.title}}" data-bs-content="{{.description}}">
+        {{.title}}
+    </a>
+{{ end }} 
+        
+*/}}
             
 
 {{ end }}

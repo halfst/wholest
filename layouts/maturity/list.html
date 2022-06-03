@@ -3,7 +3,13 @@
     <div class="container pb-5">
         <article>
             <header>
-                <h1>{{with ne .Title "Maturity"}}<a href="/maturity/">Maturity</a>/{{end}}{{.Title}}</h1>
+                <h1>
+                    {{with ne .Title "Maturity"}}
+                        <a href="/maturity/">Maturity</a>/
+                    {{end}}
+                    <img src="/img/assets/maturity-{{.Title}}.svg" class="pe-1" height="36px" width="36px">
+                    {{.Title}}
+                </h1>
             </header>
             <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
             {{.Content}}
@@ -14,7 +20,7 @@
                     <th scope="col">Date</th>
                     <th scope="col">Title</th>
                     <th scope="col">Maturity</th>
-                    <th scope="col">Summary</th>
+                    <th scope="col">Tags</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,16 +40,6 @@
                 {{end}}
             </tbody>
         </table>
-        {{/*
-        <ul>
-        <!-- Ranges through content/posts/*.md -->
-        {{ range .Pages }}
-            <li>
-                <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-            </li>
-        {{ end }}
-        </ul>
-        */}}
     </div>
 </main>
 {{ end }}
