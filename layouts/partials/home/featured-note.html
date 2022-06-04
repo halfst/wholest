@@ -4,11 +4,15 @@
     <tbody>
       
       {{- range sort (where site.RegularPages ".Params.featured" true) ".Params.lastmod" "desc" | first 1 }}
+        {{ $u := first 1 .Params.images }}
+        {{ $u := printf "%s" $u }}
+        {{ $u := strings.TrimLeft "[" $u }}
+        {{ $u := strings.TrimRight "]" $u }}
         <tr>
           <td class></td>
           <th scope="col">
             <a href="{{ .Permalink }}" class="a-no-ul">
-              <div><img src="{{ .Params.cover }}" alt="{{ .Params.imagealt }}" class="img-fluid border border-3"></div>
+              <div><img src="{{$u | safeURL}}" alt="{{ .Params.imagealt }}" class="img-fluid border border-1"></div>
               <h3>{{ .Title }}</h3>
             </a>
               <div class="recent-activity-date-text pb-1">
