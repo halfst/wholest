@@ -1,5 +1,5 @@
 
-<table class="table mt-n5">
+<table class="table">
     <thead><tr><h5>Featured Note</h5></tr></thead>
     <tbody>
       
@@ -9,10 +9,9 @@
         {{ $u := strings.TrimLeft "[" $u }}
         {{ $u := strings.TrimRight "]" $u }}
         <tr>
-          <td class></td>
           <th scope="col">
             <a href="{{ .Permalink }}" class="a-no-ul">
-              <div><img src="{{$u | safeURL}}" alt="{{ .Params.imagealt }}" class="img-fluid border border-1"></div>
+              <div><img src="{{$u | safeURL}}" alt="{{ .Params.imagealt }}" class="img-fluid rounded"></div>
               <h3>{{ .Title }}</h3>
             </a>
               <div class="recent-activity-date-text pb-1">
@@ -20,15 +19,7 @@
               </div>
               <span class="recent-activity-summary">{{ .Summary }}</span><br>
               <a href="{{ .Permalink }}" class="recent-activity-summary">Read more</a>
-              
-            
           </th> 
-          <td>
-  
-          </td>
-          <td class="d-none d-md-table-cell">
-
-          </td>  
         </tr>
       {{end}}
     </tbody>

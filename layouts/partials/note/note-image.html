@@ -1,0 +1,9 @@
+{{ $d := "https://io.halfstreet.io/assets/img/notes/default.png" }}
+{{ $a := .Params.imagealt }}
+{{ $u := first 1 .Params.images }}
+{{ $u := printf "%s" $u }}
+{{ $u := strings.TrimLeft "[" $u }}
+{{ $u := strings.TrimRight "]" $u }}
+{{ with ne $u $d}}
+    <img src="{{$u | safeURL}}" alt="{{$a}}" class="img-fluid rounded img-border">
+{{ end }}
