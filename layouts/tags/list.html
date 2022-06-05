@@ -16,8 +16,6 @@
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col">Title</th>
-                                <th scope="col">Date Posted</th>
-                                <th scope="col">Last Updated</th>
                                 <th scope="col">Maturity</th>
                                 <th scope="col">Summary</th>
                             </tr>
@@ -26,10 +24,12 @@
                             {{ range .Pages }}
                             <tr>
                                 <td class="d-none d-lg-table-cell"><img src="{{ .Params.thumbnail }}" alt="{{ .Params.imagealt }}" width="160px" height="84px" class="img-border rounded mt-1" loading="lazy"></td>
-                                <th scope="col"><a href="{{.Permalink}}">{{.Title}}</a></th>
-                                <td class="nobr">{{.Date.Format "Jan 2, 2006"}}</td>
-                                <td class="nobr">{{.Params.lastmod.Format "Jan 2, 2006"}}</td>
-                                <td><img src="/img/assets/maturity-{{.Params.maturity}}.svg" class="pe-1" height="24px" width="24px">{{.Params.maturity}}</td>
+                                <th>
+                                    <a href="{{.Permalink}}">{{.Title}}</a><br>
+                                    <span class="nobr taxonomy-list-small-text">Posted {{.Date.Format "1/2/06"}}</span><br>
+                                    <span class="nobr taxonomy-list-small-text">Updated {{.Params.lastmod.Format "1/2/06"}}</span>
+                                </th>
+                                <td><span class="nobr"><img src="/img/assets/maturity-{{.Params.maturity}}.svg" class="pe-1" height="24px" width="24px">{{.Params.maturity}}</span></td>
                                 <td><p class="recent-notes-summary">{{ .Summary }}</p></td>
                             </tr>
                             {{end}}
