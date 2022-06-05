@@ -4,7 +4,7 @@
   <tbody>
     {{- range sort ( where site.RegularPages "Section" "notes" ) ".Params.lastmod" "desc" | first 5 }}
       <tr>
-        <td class="d-none d-lg-table-cell"><img src="{{ .Params.thumbnail }}" alt="{{ .Params.imagealt }}" width="160px" height="84px" class="img-border rounded mt-1"></td>
+        <td class="d-none d-lg-table-cell"><img src="{{ .Params.thumbnail }}" alt="{{ .Params.imagealt }}" width="160px" height="84px" class="img-border rounded mt-1" loading="lazy"></td>
         <th scope="col">
           <a href="{{ .Permalink }}" class="a-no-ul">
             {{ .Title }} 
