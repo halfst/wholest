@@ -3,15 +3,15 @@
   {{ $date := .Date.Format "Jan 2, 2006" }}
   {{ $lastmod := .Lastmod.Format "Jan 2, 2006" }}
   <div class="note-date-text">Posted: {{ $date }}</div> 
-    {{ with ne $date $lastmod . }}
-      <div class="vr"></div>
-      <div class="note-date-text-400">Updated: {{ $lastmod }}</div>
-      <div class="vr"></div>
-      <div class="note-maturity-text">
-        <i class="fa fa-github pe-1"></i><a href="https://github.com/halfst/half.st/commits/master/content/notes/{{- $.File.BaseFileName -}}.{{- $.File.Ext -}}">View History</a>
-      </div>
-    {{end}}
-  </div>
+  {{ with ne $date $lastmod . }}
+    <div class="vr"></div>
+    <div class="note-date-text-400">Updated: {{ $lastmod }}</div>
+    <div class="vr"></div>
+    <div class="note-maturity-text">
+      <i class="fa fa-github pe-1"></i><a href="https://github.com/halfst/half.st/commits/master/content/notes/{{- $.File.BaseFileName -}}.{{- $.File.Ext -}}" class="external-link">View History</a>
+    </div>
+  {{end}}
+</div>
 <div class="hstack ms-3 gap-2">
   <div id="tags-single" class="d-flex flex-row">
     {{ range .Params.tags }}
@@ -26,4 +26,7 @@
   <div class="note-maturity-text">
     {{- partial "note/maturity.html" . -}}
   </div>
+</div>
+<div>
+  <a href="#comments">View Comments</a>
 </div>

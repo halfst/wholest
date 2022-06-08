@@ -16,7 +16,12 @@
         {{- partial "note/content-with-wikilinks.html" . -}}
       </article>
       <div class="col-md-4">
-        {{ partial "note/backlinks-wikilinks.html" (dict "page" . "heading" "<h4>Notes linking here:</h4>") }}
+        <div class="mb-5">
+          {{ partial "note/backlinks-wikilinks.html" (dict "page" . "heading" "<h3>Notes linking here</h3>") }}
+        </div>
+        <div>
+          {{ partial "utility/share-buttons" . }}
+        </div>
       </div>
     </div>
     <div class="row">

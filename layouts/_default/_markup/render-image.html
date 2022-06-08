@@ -1,0 +1,5 @@
+<p class="md__image">
+    <a href="{{ .Destination | safeURL }}" data-toggle="lightbox" data-caption="{{ .Text }}">
+        <img src="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }} class="img-fluid">
+    </a>
+</p>

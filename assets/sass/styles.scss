@@ -19,6 +19,9 @@ $color-light-grayish: mix($color-bg, black, 90%);
 $color-dark-grayish: mix($color-bg, black, 50%);
 $color-hs-info: mix($color-bg, $info, 90%);
 
+h1, h2, h3, h4, h5, h6 {
+    color: $color-text;
+}
 
 .footer-grayish {
     color: $color-light-grayish;
@@ -106,7 +109,7 @@ a {
     color: $color-text;
     text-decoration: none;
     border-bottom-style: solid;
-    border-color: $color-subtext;
+    border-color: $color-grayish;
     border-width: 1px;
     transition: color 500ms;
     &:hover {
@@ -193,4 +196,16 @@ a {
 .taxonomy-list-small-text {
     font-size: 14px;
     font-weight: 400;
+}
+
+.external-link {
+  
+} 
+
+.external-link::after {
+    content: "🡽";
+    vertical-align: super;
+    color: $color-grayish;
+    font-size: 10px;
+    border-bottom: 0px;
 }
