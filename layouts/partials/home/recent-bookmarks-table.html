@@ -2,14 +2,18 @@
 <table class="table mt-n5">
   <thead><tr></tr></thead>
   <tbody>
-{{ $url := "https://rss.app/feeds/nMYAfi4CE1ykKtRp.csv" }}
+{{ $url := "https://rss.app/feeds/vVRxhgCQADlim5wM.csv" }}
 {{ $sep := "," }}
 {{ range $i, $r := getCSV $sep $url }}
-  {{ if and (gt $i 0) (lt $i 4) }}
+  {{ if and (gt $i 0) (lt $i 6) }}
     <tr>
-      <th scope="col"><a href="{{ index $r 7 }}" class="a-no-ul">{{ index $r 6 }}</a></th>
-      <td>{{ index $r 8 | truncate 120 }}</td>
-      <td>{{$d := index $r 12}} {{ time.Format "1/2/06" $d }}</td>
+      <th scope="col"><a href="{{ index $r 7 }}" class="a-no-ul">{{ index $r 6 }}</a><br>
+        <span class="recent-activity-date-text nobr">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          {{$d := index $r 12}} {{ time.Format "Jan 2, 2006" $d }}
+        </span><br>
+        <span class="recent-activity-summary">{{ index $r 8 | truncate 120 }}</span>
+      </th>
     </tr>
   {{ end }}
 {{ end }}
